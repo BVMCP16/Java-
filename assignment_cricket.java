@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class cricket
+class assignment_cricket
 {
 	String name;
 	int id;
