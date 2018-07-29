@@ -39,29 +39,76 @@ class assignment_cricket
 	{
 		int n;
 		Scanner s=new Scanner(System.in);
+		//System.out.println("Enter no of players..");
+		//n=s.nextInt();
+		//cricket[] c=new cricket[n];
 		cricket c;
 	
-		System.out.println("enter name:");
-		String name= s.next();
-		System.out.println("enter id:");
-		int id=s.nextInt();
-		System.out.println("Enter choice: 1.one 2.two 3.three");
-		int choose=s.nextInt();
-		
-		String s0;
-		performance p0;
-		System.out.println("Enter match type:");
-		s0=s.next();
-		System.out.println("Catches:");
-		int catch1=s.nextInt();
-		System.out.println("Wickets:");	
-		int wicket=s.nextInt();
-		System.out.println("runs:");
-		int run=s.nextInt();
-		p0=new performance(catch1,wicket,run);
-		c=new cricket(name,id,p0);
-		c.display();
-		p0.display1(s0);
+			System.out.println("enter name:");
+			String name= s.next();
+			System.out.println("enter id:");
+			int id=s.nextInt();
+			System.out.println("No of matches: 1.one 2.two 3.three");
+			int choose=s.nextInt();
+			switch(choose)
+			{
+				case 1:
+					String s0;
+					performance p0;
+					System.out.println("Enter match type:");
+					s0=s.next();
+					System.out.println("Enter no of catches:");
+					int catch1=s.nextInt();
+					System.out.println("Enter no of wickets:");
+					int wicket=s.nextInt();
+					System.out.println("Runs has been made:");
+					int run=s.nextInt();
+					p0=new performance(catch1,wicket,run);
+					c=new cricket(name,id,p0);
+					c.display();
+					p0.display1(s0);
+					break;
+				case 2:
+					String [] s1 = new String[2];
+					performance[] p=new performance[2];	
+					for(int i=0;i<2;i++)
+					{
+						System.out.println("Enter match type:");
+						s1[i]=s.next();
+						System.out.println("Enter no of catches:");
+						catch1=s.nextInt();
+						System.out.println("Enter no of wickets:");
+						wicket=s.nextInt();
+						System.out.println("Runs has been made:");
+						run=s.nextInt();
+						p[i]=new performance(catch1,wicket,run);
+					}
+					c=new cricket(name,id,p[0],p[1]);
+					c.display();
+					p[0].display1(s1[0]);
+					p[1].display1(s1[1]);
+					break;
+				case 3:
+					String [] s2 = new String[3];
+					performance[] p2=new performance[3];	
+					for(int i=0;i<3;i++)
+					{
+						System.out.println("Enter match type:");
+						s2[i]=s.next();
+						System.out.println("Enter no of catches:");
+						catch1=s.nextInt();
+						System.out.println("Enter no of wickets:");
+						wicket=s.nextInt();
+						System.out.println("Runs has been made:");
+						run=s.nextInt();
+						p2[i]=new performance(catch1,wicket,run);
+					}
+					c=new cricket(name,id,p2[0],p2[1],p2[2]);
+					c.display();
+					p2[0].display1(s2[0]);
+					p2[1].display1(s2[1]);
+					p2[2].display1(s2[2]);
+			}
 	}	
 	
 }
